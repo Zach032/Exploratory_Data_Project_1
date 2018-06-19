@@ -1,6 +1,6 @@
 # Exploratory_Data_Project_1
 This assignment uses data from the UC Irvine Machine Learning Repository, a popular repository for machine learning datasets.
-[Dataset](https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip)
+</br>[Dataset](https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip)
 </br>Descirption: Measurements of electric power consumption in one household with a one-minute sampling rate over a period of almost 4 years. Different electrical quantities and some sub-metering values are available.
 ## [Plot One](https://github.com/Zach032/Exploratory_Data_Project_1/blob/master/plot1.R)
 ```R
