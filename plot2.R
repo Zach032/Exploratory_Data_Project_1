@@ -7,12 +7,12 @@ unzip(zipfile = "household_power_consumption.zip")
 #Load data
 powerDT <- data.table::fread(file.path(path, "household_power_consumption.txt"))
 powerDT[, Global_active_power := lapply(.SD, as.numeric), .SDcols = c("Global_active_power")]
-powerDT[, Date := lapply(.SD, as.Date, "%d/%m/%Y"), .SDcols = c("Date")]
-powerDT <- powerDT[(Date >= "2007-02-01") & (Date <= "2007-02-02")]
+powerDT[, dateTime := as.POSIXct(paste(Date, Time), format = "%d/%m/%Y %H:%M:%S")]
+powerDT <- powerDT[(dateTime >= "2007-02-01") & (dateTime < "2007-02-03")]
 
-#First Data Plot
-png("plot1.png", width = 480, height = 480)
-hist(powerDT[, Global_active_power], main = "Global Active Power", 
-     xlab="Global Active Power (kilowatts)", ylab = "Frequency", col = "red")
+#Data Plot
+png("plot2.png", width = 480, height = 480)
+plot(x = powerDT[, dateTime], y = powerDT[, Global_active_power], type = "l",
+     xlab = "", ylab = "Global Active Power (kilowatts)")
 
 dev.off()
